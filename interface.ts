@@ -1,24 +1,31 @@
-interface IStaff{
+interface Staff{
+    id: number
     name: string
 }
-
-interface IBillable{
-    total: number,
-    currentBill(): string
+interface Billable{
+    total: number
+    bill(): string
 }
 
-let medico={
-    name:'Jonathan',
-    total:33,
-    currentBill(){
+const person={
+    name:'jonathan',
+    id:33,
+    total:22,
+    bill(){
         return `${this.total}`
     }
 }
+const printStaff=(staff: Staff)=>{
+    console.log(staff.name);
+}
 
-const printStaff=(staff: IStaff )=> `${staff.name}`;
-const printBill=(bill: IBillable) => `${bill.currentBill()}`
+const printBill=(bill: Billable)=>{
+    console.log(bill.bill());
+    
+}
+printBill(person)
 
-console.log(`Nombre: ${printStaff(medico)} ${printBill(medico)}`);
+
 
 
 

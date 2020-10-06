@@ -1,14 +1,19 @@
 "use strict";
-var medico = {
-    name: 'Jonathan',
-    total: 33,
-    currentBill: function () {
-        return "" + this.total;
+const person = {
+    name: 'jonathan',
+    id: 33,
+    total: 22,
+    bill() {
+        return `${this.total}`;
     }
 };
-var printStaff = function (staff) { return "" + staff.name; };
-var printBill = function (bill) { return "" + bill.currentBill(); };
-console.log("Nombre: " + printStaff(medico) + " " + printBill(medico));
+const printStaff = (staff) => {
+    console.log(staff.name);
+};
+const printBill = (bill) => {
+    console.log(bill.bill());
+};
+printBill(person);
 // interface IStaff{
 //     id: number,
 //     nombre:string,
